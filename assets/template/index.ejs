@@ -7,8 +7,10 @@
   <body>
     <h2>React Demos List</h2>
     <ul>
-      <% for (let i=0; i<files.length; i++) { const fName = files[i].replace(/\.jsx?$/, '') %>
-      <li><a href="<%=fName %>.html"><%= fName %></a></li>
+      <% for (let i=0; i<files.length; i++) {
+        const fName = files[i].replace(/\.jsx?$/, '')
+      %>
+        <li><a href="<%=fName %>.html"><%= fName %></a></li>
       <% } %>
     </ul>
   </body>
