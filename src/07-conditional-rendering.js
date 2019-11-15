@@ -5,7 +5,16 @@ function App() {
   return (
     <div>
       <div id="demo1">test</div>
-      <div id="demo2"></div>
+      <div id="demo2">
+        <h2>阻止组件渲染</h2>
+        <ul>
+          <li>
+            在极少数情况下，你可能希望能隐藏组件，即使它已经被其他组件渲染。若要完成此操作，你可以让
+            render 方法直接返回 null，而不进行任何渲染。
+          </li>
+          <li>在组件的 render 方法中返回 null 并不会影响组件的生命周期。</li>
+        </ul>
+      </div>
     </div>
   );
 }
