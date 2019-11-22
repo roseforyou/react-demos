@@ -1,0 +1,47 @@
+div,
+p,
+input,
+ul,
+li,
+dl,
+dt,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+.search-bar-area {
+  padding: 5px 0;
+}
+
+.search-bar-area .search-bar-input {
+  height: 25px;
+}
+
+.search-bar-area .search-bar-cbxarea .search-bar-label {
+  cursor: pointer;
+}
+
+.products-area .products-area-info {
+  list-style-type: none;
+}
+.products-area .products-area-info li {
+  display: inline-block;
+  width: 100px;
+}
+.products-area .products-area-info li.blod {
+  font-weight: bold;
+}
+.products-area .products-area-info li.red {
+  color: red;
+}
+.products-area-category .products-area-category-name {
+  font-weight: bold;
+}
+
+.products-area .products-area-category {
+  margin-bottom: 5px;
+}
+#demo3 {
+  width: 800px;
+}

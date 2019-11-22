@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { tomorrowNightEighties } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 function App() {
   return (
@@ -11,9 +13,12 @@ function App() {
       </div>
       <div id="demo2"></div>
       <div id="demo3">
-        <pre>
-          {`
-//基础函数不需要讲
+        <SyntaxHighlighter
+          language="javascript"
+          style={tomorrowNightEighties}
+          showLineNumbers={true}
+        >
+          {`//基础函数不需要讲
 function toCelsius(fahrenheit) {
   return ((fahrenheit - 32) * 5) / 9;
 }
@@ -32,12 +37,12 @@ function tryConvert(temperature, convert) {
   return rounded.toString();
 }
 
-//定义一个容器组件, 用来装载温度组件, 并且传递温度组件之前的状态值
+//定义一个容器组件, 用来装载温度组件, 并且传递温度组件之间的状态值.
 class Main extends React.Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
-    
+
     this.state = {
       temperature: '',//输入的温度 or 转换后的温度
       scale: '',      //摄氏温度 or 华氏温度'
@@ -87,7 +92,7 @@ class Temperature extends React.Component {
   }
 }
 `}
-        </pre>
+        </SyntaxHighlighter>
       </div>
       <div id="demo4"></div>
     </div>
