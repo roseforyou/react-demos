@@ -2,8 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import '../assets/css/12-thinking-in-react.css';
 import classNames from 'classnames/bind';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { tomorrowNightEighties } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 function App() {
   return (
@@ -14,12 +12,10 @@ function App() {
       <div id="demo2"></div>
       <div id="demo3">
         <hr></hr>
-        <SyntaxHighlighter
-          language="javascript"
-          style={tomorrowNightEighties}
-          showLineNumbers={true}
-        >
-          {`const data = [
+        <pre>
+          <code>
+            {/* prettier-ignore */}
+            {`const data = [
   {
     category: 'Sporting Goods',
     price: '$49.99',
@@ -53,13 +49,12 @@ function App() {
   { category: 'Electronics', price: '$199.99', stocked: true, name: 'Nexus 7' },
 ];
 `}
-        </SyntaxHighlighter>
-        <SyntaxHighlighter
-          language="javascript"
-          style={tomorrowNightEighties}
-          showLineNumbers={true}
-        >
-          {`//Top search bar area
+          </code>
+        </pre>
+        <pre>
+          <code>
+            {/* prettier-ignore */}
+            {`//Top search bar area
 class Searchbar extends React.Component {
   constructor(props) {
     super(props);
@@ -100,13 +95,12 @@ class Searchbar extends React.Component {
     );
   }
 }`}
-        </SyntaxHighlighter>
-        <SyntaxHighlighter
-          language="javascript"
-          style={tomorrowNightEighties}
-          showLineNumbers={true}
-        >
-          {`//Lowest level component
+          </code>
+        </pre>
+        <pre>
+          <code>
+            {/* prettier-ignore */}
+            {`//Lowest level component
 class ProductInfo extends React.Component {
   constructor(props) {
     super(props);
@@ -130,13 +124,12 @@ class ProductInfo extends React.Component {
     );
   }
 }`}
-        </SyntaxHighlighter>
-        <SyntaxHighlighter
-          language="javascript"
-          style={tomorrowNightEighties}
-          showLineNumbers={true}
-        >
-          {`//some one category products list component
+          </code>
+        </pre>
+        <pre>
+          <code>
+            {/* prettier-ignore */}
+            {`//some one category products list component
 class ProductCategory extends React.Component {
   constructor(props) {
     super(props);
@@ -164,13 +157,12 @@ class ProductCategory extends React.Component {
   }
 }
 `}
-        </SyntaxHighlighter>
-        <SyntaxHighlighter
-          language="javascript"
-          style={tomorrowNightEighties}
-          showLineNumbers={true}
-        >
-          {`class ProductsDispaly extends React.Component {
+          </code>
+        </pre>
+        <pre>
+          <code>
+            {/* prettier-ignore */}
+            {`class ProductsDispaly extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -196,13 +188,12 @@ class ProductCategory extends React.Component {
   }
 }
 `}
-        </SyntaxHighlighter>
-        <SyntaxHighlighter
-          language="javascript"
-          style={tomorrowNightEighties}
-          showLineNumbers={true}
-        >
-          {`//The main component, handle between components data transmission
+          </code>
+        </pre>
+        <pre>
+          <code>
+            {/* prettier-ignore */}
+            {`//The main component, handle between components data transmission
 class Products extends React.Component {
   constructor(props) {
     super(props);
@@ -287,7 +278,8 @@ class Products extends React.Component {
 
 ReactDOM.render(<Products data={data} />, document.getElementById('demo2'));
 `}
-        </SyntaxHighlighter>
+          </code>
+        </pre>
       </div>
       <div id="demo4"></div>
     </div>

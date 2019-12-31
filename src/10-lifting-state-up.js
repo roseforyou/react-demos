@@ -1,7 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { tomorrowNightEighties } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 function App() {
   return (
@@ -13,11 +11,9 @@ function App() {
       </div>
       <div id="demo2"></div>
       <div id="demo3">
-        <SyntaxHighlighter
-          language="javascript"
-          style={tomorrowNightEighties}
-          showLineNumbers={true}
-        >
+        <pre>
+          {/* prettier-ignore */}
+          <code>
           {`//基础函数不需要讲
 function toCelsius(fahrenheit) {
   return ((fahrenheit - 32) * 5) / 9;
@@ -92,7 +88,8 @@ class Temperature extends React.Component {
   }
 }
 `}
-        </SyntaxHighlighter>
+        </code>
+        </pre>
       </div>
       <div id="demo4"></div>
     </div>

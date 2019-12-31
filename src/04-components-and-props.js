@@ -1,7 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { tomorrowNightEighties } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 //函数组件
 // function Welcome(props) {
 //   return <h1>Hello, {props.name}</h1>;
@@ -56,11 +54,9 @@ function App() {
 ReactDOM.render(
   <div>
     {<App />}
-    <SyntaxHighlighter
-      language="javascript"
-      style={tomorrowNightEighties}
-      showLineNumbers={true}
-    >{`import React from 'react';
+    <pre>
+      {/* prettier-ignore */}
+      <code>{`import React from 'react';
 import ReactDOM from 'react-dom';
 //函数组件
 // function Welcome(props) {
@@ -115,7 +111,8 @@ function App() {
 // const element = <Welcome name="Sara" />;
 ReactDOM.render(<App />, document.getElementById('root'));
 //所有 React 组件都必须像纯函数一样保护它们的 props 不被更改。
-`}</SyntaxHighlighter>
+`}</code>
+    </pre>
   </div>,
   document.getElementById('root')
 );

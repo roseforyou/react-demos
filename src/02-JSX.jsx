@@ -1,7 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { tomorrowNightEighties } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 const formatName = user => {
   return `${user.firstName} ${user.lastName}`;
@@ -39,11 +37,9 @@ const element = <h1> Hi, {formatName(user)}!</h1>;
 ReactDOM.render(
   <div>
     {element}
-    <SyntaxHighlighter
-      language="javascript"
-      style={tomorrowNightEighties}
-      showLineNumbers={true}
-    >
+    <pre>
+      {/* prettier-ignore */}
+      <code>
       {`import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -83,7 +79,8 @@ ReactDOM.render(element, document.getElementById('root'));
 // };
 // 这些对象被称为 “React 元素”。它们描述了你希望在屏幕上看到的内容。React 通过读取这些对象，然后使用它们来构建 DOM 以及保持随时更新。
 `}
-    </SyntaxHighlighter>
+    </code>
+    </pre>
   </div>,
   document.getElementById('root')
 );

@@ -1,7 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { tomorrowNightEighties } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 class Clock extends React.Component {
   constructor(props) {
@@ -28,11 +26,9 @@ class Clock extends React.Component {
 ReactDOM.render(
   <div>
     <Clock />
-    <SyntaxHighlighter
-      language="javascript"
-      style={tomorrowNightEighties}
-      showLineNumbers={true}
-    >
+    <pre>
+      {/* prettier-ignore */}
+      <code>
       {`class Clock extends React.Component {
   constructor(props) {
     super();
@@ -54,7 +50,8 @@ ReactDOM.render(
     return <div>Now time is: {this.state.date.toLocaleString()}</div>;
   }
 }`}
-    </SyntaxHighlighter>
+    </code>
+    </pre>
   </div>,
   document.getElementById('root')
 );

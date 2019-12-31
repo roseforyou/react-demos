@@ -1,6 +1,9 @@
 const path = require('path');
 const fs = require('fs');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const files = fs.readdirSync(path.resolve('src'));
 const entryObj = {};
@@ -17,7 +20,7 @@ files.forEach(fileName => {
       templateParameters: {
         propName,
       },
-      chunks: [propName],
+      chunks: ['react-vendor', propName],
       inject: 'body',
       filename: propName + '.html',
     })
@@ -36,18 +39,13 @@ plugins.push(
 );
 
 module.exports = {
-  mode: 'development',
   entry: entryObj,
-  devServer: {
-    hot: true,
-    watchContentBase: true,
-  },
+  plugins: [new CleanWebpackPlugin(), ...plugins],
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name]-bundle.js',
-  },
-  watchOptions: {
-    ignored: /node_modules/,
+    // publicPath: '/dist/',
+    filename: '[name].bundle.js',
+    chunkFilename: '[name].bundle.js',
   },
   module: {
     rules: [
@@ -60,10 +58,12 @@ module.exports = {
       },
       {
         test: /\.css$/,
+        exclude: /node_modules/,
         use: [{ loader: 'style-loader' }, { loader: 'css-loader' }],
       },
       {
         test: /\.scss$/,
+        exclude: /node_modules/,
         use: [
           'style-loader', // creates style nodes from JS strings
           'css-loader', // translates CSS into CommonJS
@@ -72,6 +72,7 @@ module.exports = {
       },
       {
         test: /\.less$/,
+        exclude: /node_modules/,
         use: [
           {
             loader: 'style-loader', // creates style nodes from JS strings
@@ -86,5 +87,5 @@ module.exports = {
       },
     ],
   },
-  plugins,
+  resolve: { extensions: ['*', '.js', '.jsx'] },
 };
