@@ -113,6 +113,11 @@ ReactDOM.render(<App />, document.getElementById('root'));
 //所有 React 组件都必须像纯函数一样保护它们的 props 不被更改。
 `}</code>
     </pre>
+    <a href="https://juejin.im/post/5c98310ff265da612d634730">
+      【译】 React官方：函数组件与类组件的差异 ？
+    </a>
+    <br />
+    <a href="/">return</a>
   </div>,
   document.getElementById('root')
 );

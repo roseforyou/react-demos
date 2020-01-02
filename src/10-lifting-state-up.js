@@ -14,7 +14,11 @@ function App() {
         <pre>
           {/* prettier-ignore */}
           <code>
-          {`//基础函数不需要讲
+          {`
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+//基础函数不需要讲
 function toCelsius(fahrenheit) {
   return ((fahrenheit - 32) * 5) / 9;
 }
@@ -92,6 +96,7 @@ class Temperature extends React.Component {
         </pre>
       </div>
       <div id="demo4"></div>
+      <a href="/">return</a>
     </div>
   );
 }

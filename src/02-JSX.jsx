@@ -81,6 +81,7 @@ ReactDOM.render(element, document.getElementById('root'));
 `}
     </code>
     </pre>
+    <a href="/">return</a>
   </div>,
   document.getElementById('root')
 );

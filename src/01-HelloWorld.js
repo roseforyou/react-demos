@@ -14,6 +14,7 @@ ReactDOM.render(\<h1\>Hello, world!\</h1\>, document.getElementById('root'));
 `}
       </code>
     </pre>
+    <a href="/">return</a>
   </div>,
   document.getElementById('root')
 );

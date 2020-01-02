@@ -29,7 +29,10 @@ ReactDOM.render(
     <pre>
       {/* prettier-ignore */}
       <code>
-      {`class Clock extends React.Component {
+      {`import React from 'react';
+import ReactDOM from 'react-dom';
+
+class Clock extends React.Component {
   constructor(props) {
     super();
     this.state = { date: new Date() };
@@ -49,14 +52,19 @@ ReactDOM.render(
   render() {
     return <div>Now time is: {this.state.date.toLocaleString()}</div>;
   }
-}`}
-    </code>
-    </pre>
-  </div>,
-  document.getElementById('root')
-);
+};
+
+ReactDOM.render(<Clock />, document.getElementById('root'));
+
 // 数据是向下流动的
 // 不管是父组件或是子组件都无法知道某个组件是有状态的还是无状态的，并且它们也并不关心它是函数组件还是 class 组件。
 // 这就是为什么称 state 为局部的或是封装的的原因。除了拥有并设置了它的组件，其他组件都无法访问。
 
 // 组件会在其 props 中接收参数，但是组件本身无法知道它是来自于 组件的state，或是 组件的 props，还是手动输入的
+`}
+    </code>
+    </pre>
+    <a href="/">return</a>
+  </div>,
+  document.getElementById('root')
+);
